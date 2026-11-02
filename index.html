@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Иду лесом — кофейня-лофт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Rubik:wght@400;500;700&display=swap">
+<style>
+/* Иду лесом: coffee loft — white brick, bookshelves, vinyl records on the wall ("Сегодня всё можно"), green bar, neon line-tree logo, veranda; hosts vinyl nights, workshops, concerts. Light theme with forest green; signature = what-happens-here board + venue request. */
+:root{--bg:#F7F5F0;--panel:#FFFFFF;--fg:#1E2A22;--fg2:#2E3B32;--muted:#64705F;--line:#E2DDD2;--acc:#1F7A4D;--on-acc:#fff;--price:#1F7A4D;--neon:#39C77A;--display:"Caveat",cursive;--body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;text-wrap:balance;overflow-wrap:anywhere}
+a{color:var(--link,var(--acc))}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.demo{background:var(--demo-bg,#000);color:var(--demo-fg,#bbb);font-size:13px}.demo .wrap{padding-block:7px}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:16px}
+.logo{font-family:var(--display);font-size:30px;line-height:1}
+.logo small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.pill{text-decoration:none;font-weight:700;padding:10px 18px;border-radius:var(--r-btn,999px);background:var(--acc);color:var(--on-acc,#fff);font-variant-numeric:tabular-nums}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:center;padding-block:34px 60px}
+.kick{color:var(--acc);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(36px,6.2vw,76px);margin-top:12px}
+.hero p.lead{font-size:19px;max-width:31em;margin:16px 0 0;color:var(--fg2,var(--fg))}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{font:inherit;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:var(--r-btn,999px);border:2px solid var(--acc);color:var(--acc);background:none;cursor:pointer}
+.btn.solid{background:var(--acc);color:var(--on-acc,#fff)}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:24px}
+.facts b{display:block;font-family:var(--display);font-size:30px;font-variant-numeric:tabular-nums;line-height:1.1}
+.facts span{font-size:13px;color:var(--muted)}
+.decor{justify-self:center;width:100%;max-width:440px}
+.decor svg{width:100%;height:auto;display:block}
+section.s{padding-block:60px;border-top:1px solid var(--line)}
+section.s h2{font-size:clamp(30px,4.8vw,52px)}
+.sub{color:var(--muted);margin:10px 0 0;max-width:42em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r,14px);padding:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.tabs button{font:inherit;font-weight:600;font-size:15px;padding:9px 16px;border-radius:var(--r-btn,999px);border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc,#fff)}
+.menu{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px}
+.menu li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.menu .n{font-weight:600}.menu .p{font-family:var(--display);font-size:20px;color:var(--price,var(--acc));font-variant-numeric:tabular-nums;white-space:nowrap}
+.menu .d{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.quotes blockquote{margin:0}
+.quotes cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:14px}
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips a{text-decoration:none;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+.hint{font-size:14px;color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:36px;height:36px;border-radius:50%;border:2px solid var(--acc);background:none;color:var(--acc);font-size:20px;font-weight:700;cursor:pointer;flex:none}
+.step output{min-width:2ch;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.total{font-family:var(--display);font-size:40px;color:var(--acc);font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+footer{padding-block:26px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:820px){.hero .wrap,.two{grid-template-columns:minmax(0,1fr)}.menu,.quotes,.contacts{grid-template-columns:minmax(0,1fr)}.decor{max-width:340px}}
+
+.demo{--demo-bg:#1E2A22}
+.hero h1{font-size:clamp(46px,7.4vw,96px);color:var(--acc)}
+section.s h2{font-size:clamp(40px,6vw,64px);color:var(--acc)}
+.logo{font-size:38px;color:var(--acc)}
+.hero{background-image:linear-gradient(rgba(247,245,240,.9),rgba(247,245,240,.9)),repeating-linear-gradient(0deg,transparent 0 22px,#E7E1D6 22px 24px),repeating-linear-gradient(90deg,transparent 0 46px,#E7E1D6 46px 48px)}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+.board .card{border-top:5px solid var(--acc)}
+.board .ico{font-size:34px;line-height:1}
+.board b{display:block;margin-top:8px;font-size:18px}
+form label{display:block;font-size:14px;color:var(--muted);margin-top:12px}
+form input,form select{width:100%;font:inherit;padding:11px 12px;margin-top:6px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--fg)}
+@media (max-width:820px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:no-preference){.rec{animation:spin 6s linear infinite;transform-origin:300px 300px}@keyframes spin{to{transform:rotate(360deg)}}}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="demo"><div class="wrap">Демо-версия сайта · сделано на основе карточки заведения на Яндекс Картах</div></div>
+<header class="top"><div class="wrap">
+  <div class="logo">Иду лесом<small>кофейня-лофт</small></div>
+  <a class="pill" href="tel:+79998957134">+7 999 895-71-34</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="kick">Светлогорский проезд, 13 · Планерная</div>
+    <h1>Сегодня всё можно</h1>
+    <p class="lead">Кофейня-лофт с книжными полками, пластинками на кирпичной стене и верандой в зелени. Здесь пьют альтернативу на V60, едят вафли и сырники, а по вечерам слушают винил и живую музыку.</p>
+    <div class="cta"><a class="btn solid" href="#events">Что у нас бывает</a><a class="btn" href="#menu">Меню</a></div>
+    <div class="facts"><div><b>5,0</b><span>2 002 оценки</span></div><div><b>9–22</b><span>ежедневно</span></div><div><b>лофт</b><span>для ваших событий</span></div></div>
+  </div>
+  <div class="decor" aria-hidden="true"><svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="#fff" stroke="#39C77A" stroke-width="6"/>
+<g stroke="#1F7A4D" stroke-width="7" stroke-linecap="round" fill="none"><path d="M110 300V140M110 180l-26-24M110 220l28-26M110 260l-24-20"/><path d="M170 300V110M170 150l-30-28M170 190l32-30M170 240l-30-24"/><path d="M230 300V130M230 170l-28-26M230 210l30-26M230 255l-26-20"/><path d="M290 300V160M290 200l-24-22M290 240l26-22"/><path d="M80 300h240"/></g>
+<g class="rec"><circle cx="300" cy="300" r="70" fill="#1E2A22"/><circle cx="300" cy="300" r="50" fill="none" stroke="#3A463D" stroke-width="2"/><circle cx="300" cy="300" r="34" fill="none" stroke="#3A463D" stroke-width="2"/><circle cx="300" cy="300" r="16" fill="#39C77A"/></g></svg></div>
+</div></section>
+
+<section class="s" id="events"><div class="wrap">
+  <div class="kick">Афиша лофта</div><h2>Что у нас бывает</h2>
+  <p class="sub">Расписание публикуем в Telegram-канале. А зал можно забронировать под своё событие.</p>
+  <div class="board">
+   <div class="card"><div class="ico">◉</div><b>Виниловые вечера</b><span class="hint">пластинки и хороший кофе</span></div>
+   <div class="card"><div class="ico">✎</div><b>Мастер-классы</b><span class="hint">творческие встречи для взрослых и детей</span></div>
+   <div class="card"><div class="ico">♪</div><b>Живая музыка</b><span class="hint">концерты в зале-лофте</span></div>
+   <div class="card"><div class="ico">❝</div><b>Английский клуб</b><span class="hint">разговорные вечера</span></div>
+  </div>
+  <div class="two">
+   <div><h3 style="font-size:40px;color:var(--acc)">Ваше событие в лофте</h3><p>День рождения, лекция, концерт, съёмка — оставьте заявку, и мы перезвоним, чтобы обсудить детали.</p><a class="btn" href="https://t.me/idulesom_coffee_loft" target="_blank" rel="noopener">Канал в Telegram</a></div>
+   <form class="card" id="eventForm"><label for="eDate">Дата</label><input id="eDate" type="date" required>
+   <label for="eFmt">Формат</label><select id="eFmt"><option>День рождения</option><option>Лекция или мастер-класс</option><option>Концерт</option><option>Съёмка</option><option>Другое</option></select>
+   <label for="eGuests">Гостей</label><select id="eGuests"><option>до 10</option><option>10–25</option><option>25–50</option><option>50+</option></select>
+   <button class="btn solid" style="width:100%;margin-top:16px">Позвонить и обсудить</button><p class="hint" id="eNote" style="margin:10px 0 0"></p></form>
+  </div>
+</div></section>
+<section class="s" id="menu"><div class="wrap">
+  <div class="kick">Меню</div>
+  <h2>Меню и цены</h2>
+  <p class="sub">Цены из меню заведения.</p>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Разделы меню"></div>
+  <ul class="menu" id="menuList"></ul>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <div class="kick">Отзывы гостей</div>
+  <h2>Что говорят гости</h2>
+  <div class="quotes"><blockquote class="card">«Одно из самых любимых мест не только в Москве, но и вообще. Атмосфера просто потрясающая! А виниловые вечера, мастер-классы…»<cite>Гостья, Яндекс Карты</cite></blockquote><blockquote class="card">«Интерьер одновременно и дышит лёгкостью, и насыщен милыми деталями. Большой ассортимент альтернативного молока.»<cite>Гостья, Яндекс Карты</cite></blockquote><blockquote class="card">«Всё продумано до мелочей — вода в графинах, влажные салфетки, даже о собачках побеспокоились.»<cite>Гость, Яндекс Карты</cite></blockquote></div>
+</div></section>
+
+<section class="s" id="contacts"><div class="wrap">
+  <h2>Как нас найти</h2>
+  <div class="contacts">
+    <div class="card"><b>Адрес</b><br>Москва, Светлогорский пр., 13, стр. 7<br><span class="hint">есть веранда · можно с собаками</span></div>
+    <div class="card"><b>Часы работы</b><br>Ежедневно 9:00–22:00<br><span class="hint" id="openNow"></span></div>
+    <div class="card"><b>Связаться</b><br><a href="tel:+79998957134">+7 999 895-71-34</a><div class="chips"><a href="https://t.me/idulesom_coffee_loft" target="_blank" rel="noopener">Telegram-канал</a><a href="https://yandex.ru/maps/org/idu_lesom/19096547976/" target="_blank" rel="noopener">Маршрут</a></div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© Иду лесом · Демо-версия сайта</div></footer>
+
+<script>
+var OPEN=[540, 1320];
+var MENU={"Кофе": [["Воронка V60", 330, "0,2 л"], ["Флэт уайт", 310, "0,2 л"], ["Капучино", 310, "0,3 л"], ["Латте", 310, "0,3 л"], ["Американо", 250, "0,2 л"], ["Эспрессо", 230, ""]], "Завтраки": [["Смузи-боул манго-банан", 550, ""], ["Сырники", 440, ""], ["Бельгийские вафли", 260, "1 шт."], ["Бельгийские вафли, две", 490, ""], ["Блины в ассортименте", 450, ""]], "Омлеты": [["Омлет «Классика»", 350, "с хрустящими тостами"], ["Омлет «Итальянское утро»", 450, ""], ["Омлет «Завтрак пастуха»", 470, "с колбасками"], ["Омлет «Испанский дуэт»", 570, "хамон, шпинат, вяленые томаты"]]};
+
+(function(){
+var tabs=document.getElementById('tabs'),list=document.getElementById('menuList');
+if(tabs&&typeof MENU!=='undefined'){
+ function show(c,btn){tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-selected','false')});btn.setAttribute('aria-selected','true');list.innerHTML='';
+  MENU[c].forEach(function(d){var li=document.createElement('li');[['n',d[0]],['p',d[1]?d[1].toLocaleString('ru-RU')+' ₽':''],['d',d[2]||'']].forEach(function(s){if(!s[1])return;var e=document.createElement('span');e.className=s[0];e.textContent=s[1];li.appendChild(e)});list.appendChild(li)})}
+ Object.keys(MENU).forEach(function(c,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=c;b.addEventListener('click',function(){show(c,b)});tabs.appendChild(b);if(i===0)show(c,b)});
+}
+var el=document.getElementById('openNow');
+if(el){try{var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'}));var m=d.getHours()*60+d.getMinutes();var o=OPEN[0],c=OPEN[1];var open=c>o?(m>=o&&m<c):(m>=o||m<c);
+ el.textContent=open?'Сейчас открыто':'Сейчас закрыто — откроемся в '+String(Math.floor(o/60)).padStart(2,'0')+':'+String(o%60).padStart(2,'0')}catch(e){}}
+})();
+
+document.getElementById('eventForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('eNote').textContent='Скажите администратору: '+document.getElementById('eFmt').value+', '+(document.getElementById('eDate').value||'дата —')+', гостей '+document.getElementById('eGuests').value;location.href='tel:+79998957134'});
+
+</script>
+
+</body>
+</html>
